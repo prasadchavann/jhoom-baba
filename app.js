@@ -421,7 +421,7 @@ function setupLazyLoading() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.style.opacity = '0';
+                    img.style.opacity = '1';
                     img.style.transition = 'opacity 0.3s ease-in-out';
                     
                     img.onload = () => {

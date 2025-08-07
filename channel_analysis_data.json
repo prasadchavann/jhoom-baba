@@ -1,0 +1,160 @@
+{
+  "channel_overview": {
+    "name": "Jhoom Baba Gyaan",
+    "subscribers": 60800,
+    "total_videos": 75,
+    "total_views": 1938039,
+    "channel_age_months": 17,
+    "niche": "Career Guidance & Internship Opportunities",
+    "health_score": 68.6,
+    "last_updated": "2025-08-07"
+  },
+  "performance_metrics": {
+    "monthly_growth_rate": 5.3,
+    "avg_view_duration": "4:32",
+    "click_through_rate": 8.2,
+    "subscriber_to_view_ratio": 42.5,
+    "engagement_breakdown": {
+      "subscriber_growth": 64.0,
+      "engagement_rate": 56.25,
+      "view_consistency": 75.0,
+      "upload_consistency": 85.0,
+      "content_quality": 80.0
+    }
+  },
+  "content_analysis": {
+    "top_categories": [
+      {
+        "name": "Scholarships",
+        "performance": "Excellent",
+        "avg_views": 45000
+      },
+      {
+        "name": "Paid Internships",
+        "performance": "Good",
+        "avg_views": 35000
+      },
+      {
+        "name": "Government Internships",
+        "performance": "Good",
+        "avg_views": 32000
+      }
+    ],
+    "upload_patterns": {
+      "frequency": "4-6 videos per month",
+      "optimal_length": "8-12 minutes",
+      "best_posting_days": [
+        "Tuesday",
+        "Thursday"
+      ]
+    }
+  },
+  "competitor_benchmark": {
+    "channels": [
+      {
+        "name": "Jhoom Baba Gyaan",
+        "subscribers": 60800,
+        "avg_views": 25840,
+        "engagement_rate": 4.5,
+        "upload_frequency": 5.2,
+        "health_score": 68.6,
+        "niche": "Career Guidance"
+      },
+      {
+        "name": "CareerVidz",
+        "subscribers": 5000000,
+        "avg_views": 45000,
+        "engagement_rate": 3.2,
+        "upload_frequency": 8.0,
+        "health_score": 78.5,
+        "niche": "Career Guidance"
+      },
+      {
+        "name": "Career Protocol",
+        "subscribers": 18000,
+        "avg_views": 12000,
+        "engagement_rate": 5.8,
+        "upload_frequency": 3.5,
+        "health_score": 65.2,
+        "niche": "Career Guidance"
+      },
+      {
+        "name": "Internshala",
+        "subscribers": 265000,
+        "avg_views": 22000,
+        "engagement_rate": 3.8,
+        "upload_frequency": 6.2,
+        "health_score": 72.1,
+        "niche": "Career Guidance"
+      }
+    ]
+  },
+  "seo_analysis": {
+    "title_optimization": {
+      "score": 82,
+      "strengths": [
+        "Uses fire emoji effectively",
+        "Clear value proposition",
+        "Urgency indicators"
+      ],
+      "improvements": [
+        "Add more specific keywords",
+        "Optimize length for mobile",
+        "Include year/date in evergreen content"
+      ]
+    },
+    "thumbnail_analysis": {
+      "score": 75,
+      "strengths": [
+        "Consistent branding",
+        "Clear text overlay",
+        "Attention-grabbing colors"
+      ],
+      "improvements": [
+        "More emotional expressions",
+        "Better contrast ratios",
+        "A/B test different styles"
+      ]
+    },
+    "description_optimization": {
+      "score": 70,
+      "strengths": [
+        "Clear channel purpose",
+        "Contact information provided",
+        "Consistent messaging"
+      ],
+      "improvements": [
+        "Add more keywords",
+        "Include timestamps",
+        "Add social proof"
+      ]
+    }
+  },
+  "growth_recommendations": {
+    "immediate_actions": [
+      "Create more scholarship-focused content (highest performing category)",
+      "Optimize thumbnail design for mobile viewing",
+      "Implement consistent posting schedule (twice weekly)",
+      "Add end screens to increase session duration"
+    ],
+    "short_term_strategies": [
+      "Develop signature series (Weekly Internship Updates)",
+      "Create collaboration opportunities with career counselors",
+      "Improve SEO with targeted keyword research",
+      "Launch community tab engagement campaigns"
+    ],
+    "long_term_goals": [
+      "Reach 100K subscribers by Q4 2025",
+      "Expand to career guidance beyond internships",
+      "Develop premium course offerings",
+      "Build email list for direct audience communication"
+    ]
+  },
+  "engagement_insights": {
+    "peak_engagement_times": "Evening hours (6-9 PM IST)",
+    "top_engaging_content": "Scholarship and high-paying internship opportunities",
+    "audience_retention_patterns": "Strong opening hook needed (50% drop in first 30 seconds)",
+    "comment_sentiment": "Highly positive (95% positive sentiment)",
+    "community_health": "Active and engaged, seeking practical guidance"
+  }
+}

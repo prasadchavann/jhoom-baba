@@ -169,122 +169,128 @@ function animateCircularProgress(element, targetScore) {
 // Market Position Chart
 function setupMarketPositionChart() {
     const canvas = document.getElementById('marketPositionChart');
-    
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        
-        // Competitor data
-        const competitorData = [
-            { name: 'Jhoom Baba Gyaan', subscribers: 60.8, avgViews: 25.8, engagementRate: 4.5, current: true },
-            { name: 'CareerVidz', subscribers: 5000, avgViews: 45.0, engagementRate: 3.2, current: false },
-            { name: 'Career Protocol', subscribers: 18.0, avgViews: 12.0, engagementRate: 5.8, current: false },
-            { name: 'Internshala', subscribers: 265.0, avgViews: 22.0, engagementRate: 3.8, current: false }
-        ];
-        
-        new Chart(ctx, {
-            type: 'scatter',
-            data: {
-                datasets: [{
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+
+    // Competitor and current channel data
+    const competitorData = [
+        { name: 'Jhoom Baba Gyaan', subscribers: 60.8, avgViews: 25.8, engagementRate: 4.5, current: true },
+        { name: 'CareerVidz', subscribers: 5000, avgViews: 45.0, engagementRate: 3.2, current: false },
+        { name: 'Career Protocol', subscribers: 18.0, avgViews: 12.0, engagementRate: 5.8, current: false },
+        { name: 'Internshala', subscribers: 265.0, avgViews: 22.0, engagementRate: 3.8, current: false }
+    ];
+
+    // Bubble size is scaled by sqrt of average views
+    const scaleBubbleSize = (views) => Math.sqrt(views) * 2;
+
+    const chart = new Chart(ctx, {
+        type: 'bubble',
+        data: {
+            datasets: [
+                {
                     label: 'Current Channel',
-                    data: competitorData.filter(d => d.current).map(d => ({
-                        x: d.subscribers,
-                        y: d.engagementRate,
-                        r: Math.sqrt(d.avgViews) / 2
-                    })),
+                    data: competitorData
+                        .filter(d => d.current)
+                        .map(d => ({
+                            x: d.subscribers,
+                            y: d.engagementRate,
+                            r: scaleBubbleSize(d.avgViews),
+                            name: d.name,
+                            avgViews: d.avgViews
+                        })),
                     backgroundColor: '#1FB8CD',
                     borderColor: '#1FB8CD',
-                    borderWidth: 2
-                }, {
+                    borderWidth: 2,
+                },
+                {
                     label: 'Competitors',
-                    data: competitorData.filter(d => !d.current).map(d => ({
-                        x: d.subscribers,
-                        y: d.engagementRate,
-                        r: Math.sqrt(d.avgViews) / 2
-                    })),
+                    data: competitorData
+                        .filter(d => !d.current)
+                        .map(d => ({
+                            x: d.subscribers,
+                            y: d.engagementRate,
+                            r: scaleBubbleSize(d.avgViews),
+                            name: d.name,
+                            avgViews: d.avgViews
+                        })),
                     backgroundColor: 'rgba(180, 131, 76, 0.6)',
                     borderColor: '#B4834C',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Subscribers vs Engagement Rate (Bubble size = Avg Views)',
-                        font: {
-                            size: 16,
-                            weight: 'bold'
-                        },
-                        color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim()
+                    borderWidth: 1,
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Subscribers vs Engagement Rate',
+                    font: {
+                        size: 18,
+                        weight: 'bold'
                     },
-                    legend: {
-                        position: 'top',
-                        labels: {
-                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim(),
-                            usePointStyle: true,
-                            padding: 20
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                const dataIndex = context.dataIndex;
-                                const dataset = context.datasetIndex;
-                                const competitor = dataset === 0 ? 
-                                    competitorData.filter(d => d.current)[dataIndex] : 
-                                    competitorData.filter(d => !d.current)[dataIndex];
-                                
-                                return [
-                                    `${competitor.name}`,
-                                    `Subscribers: ${competitor.subscribers}K`,
-                                    `Engagement: ${competitor.engagementRate}%`,
-                                    `Avg Views: ${competitor.avgViews}K`
-                                ];
-                            }
-                        }
+                    color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim()
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        usePointStyle: true,
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim(),
+                        padding: 16
                     }
                 },
-                scales: {
-                    x: {
-                        type: 'logarithmic',
-                        title: {
-                            display: true,
-                            text: 'Subscribers (K)',
-                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim()
-                        },
-                        ticks: {
-                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-text-secondary').trim(),
-                            callback: function(value) {
-                                return value + 'K';
-                            }
-                        },
-                        grid: {
-                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-border').trim()
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Engagement Rate (%)',
-                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim()
-                        },
-                        ticks: {
-                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-text-secondary').trim(),
-                            callback: function(value) {
-                                return value + '%';
-                            }
-                        },
-                        grid: {
-                            color: getComputedStyle(document.documentElement).getPropertyValue('--color-border').trim()
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            const point = context.raw;
+                            return [
+                                `${point.name}`,
+                                `Subscribers: ${point.x}K`,
+                                `Engagement Rate: ${point.y}%`,
+                                `Avg Views: ${point.avgViews}K`
+                            ];
                         }
                     }
                 }
+            },
+            scales: {
+                x: {
+                    type: 'logarithmic',
+                    title: {
+                        display: true,
+                        text: 'Subscribers (K)',
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim()
+                    },
+                    ticks: {
+                        callback: value => `${value}K`,
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--color-text-secondary').trim()
+                    },
+                    grid: {
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--color-border').trim()
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Engagement Rate (%)',
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--color-text').trim()
+                    },
+                    ticks: {
+                        callback: value => `${value}%`,
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--color-text-secondary').trim()
+                    },
+                    grid: {
+                        color: getComputedStyle(document.documentElement).getPropertyValue('--color-border').trim()
+                    }
+                }
             }
-        });
-    }
+        }
+    });
 }
+
 
 // Smooth Scrolling Setup
 function setupSmoothScrolling() {

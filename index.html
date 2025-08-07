@@ -54,14 +54,14 @@
                     <div class="health-score__content">
                         <h3>Channel Health Score</h3>
                         <div class="health-score__visual">
-                            <div class="circular-progress" data-score="68.6">
+                            <div id="health-score-progress" class="circular-progress" data-score="0">
                                 <div class="circular-progress__inner">
-                                    <span class="circular-progress__score">68.6</span>
-                                    <span class="circular-progress__label">Good</span>
+                                    <span id="health-score-value" class="circular-progress__score">0.0</span>
+                                    <span id="health-score-label" class="circular-progress__label"></span>
                                 </div>
                             </div>
                         </div>
-                        <p class="health-score__description">Above average performance in the career guidance niche</p>
+                        <p id="health-score-description" class="health-score__description"></p>
                     </div>
                 </div>
 
@@ -71,32 +71,32 @@
                         <div class="metric-card__icon">👥</div>
                         <div class="metric-card__content">
                             <h4>Subscribers</h4>
-                            <div class="metric-card__value">60.8K</div>
-                            <div class="metric-card__change positive">+5.3% monthly</div>
+                            <div id="subscribers-value" class="metric-card__value">-</div>
+                            <div id="subscribers-change" class="metric-card__change"></div>
                         </div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-card__icon">👁️</div>
                         <div class="metric-card__content">
                             <h4>Total Views</h4>
-                            <div class="metric-card__value">1.94M</div>
-                            <div class="metric-card__change">25.8K avg/video</div>
+                            <div id="views-value" class="metric-card__value">-</div>
+                            <div id="views-change" class="metric-card__change"></div>
                         </div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-card__icon">🎬</div>
                         <div class="metric-card__content">
                             <h4>Videos</h4>
-                            <div class="metric-card__value">75</div>
-                            <div class="metric-card__change">5.2 uploads/month</div>
+                            <div id="videos-value" class="metric-card__value">-</div>
+                            <div id="videos-change" class="metric-card__change"></div>
                         </div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-card__icon">💬</div>
                         <div class="metric-card__content">
                             <h4>Engagement Rate</h4>
-                            <div class="metric-card__value">4.5%</div>
-                            <div class="metric-card__change positive">Above industry avg</div>
+                            <div id="engagement-rate-value" class="metric-card__value">-</div>
+                            <div id="engagement-rate-change" class="metric-card__change"></div>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                 <!-- Performance Radar Chart -->
                 <div class="chart-container">
                     <h3>Performance vs Industry Benchmarks</h3>
-                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/50314dd0872bf59026795120ad90c544/7763e90c-eb81-46b5-bf53-d9670f3fbed6/319a0e44.png" alt="Channel performance radar chart" class="chart-image">
+                    <img src="channel_performance_radar.png" alt="Channel performance radar chart" class="chart-image">
                 </div>
             </section>
 
@@ -116,86 +116,22 @@
                 </div>
 
                 <!-- Performance Breakdown -->
-                <div class="performance-breakdown">
-                    <div class="breakdown-item">
-                        <div class="breakdown-item__header">
-                            <h4>Subscriber Growth</h4>
-                            <span class="breakdown-item__score good">64%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-bar__fill" data-width="64"></div>
-                        </div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-item__header">
-                            <h4>Engagement Rate</h4>
-                            <span class="breakdown-item__score average">56%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-bar__fill" data-width="56"></div>
-                        </div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-item__header">
-                            <h4>View Consistency</h4>
-                            <span class="breakdown-item__score good">75%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-bar__fill" data-width="75"></div>
-                        </div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-item__header">
-                            <h4>Upload Consistency</h4>
-                            <span class="breakdown-item__score excellent">85%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-bar__fill" data-width="85"></div>
-                        </div>
-                    </div>
-                    <div class="breakdown-item">
-                        <div class="breakdown-item__header">
-                            <h4>Content Quality</h4>
-                            <span class="breakdown-item__score good">80%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-bar__fill" data-width="80"></div>
-                        </div>
-                    </div>
+                <div id="performance-breakdown-container" class="performance-breakdown">
+                    <!-- Performance breakdown items will be generated by JavaScript -->
                 </div>
 
                 <!-- Content Categories -->
                 <div class="content-categories">
                     <h3>Top Performing Content Categories</h3>
-                    <div class="categories-grid">
-                        <div class="category-card excellent">
-                            <h4>Scholarships</h4>
-                            <div class="category-stats">
-                                <span class="stat">45K avg views</span>
-                                <span class="performance-badge excellent">Excellent</span>
-                            </div>
-                        </div>
-                        <div class="category-card good">
-                            <h4>Paid Internships</h4>
-                            <div class="category-stats">
-                                <span class="stat">35K avg views</span>
-                                <span class="performance-badge good">Good</span>
-                            </div>
-                        </div>
-                        <div class="category-card good">
-                            <h4>Government Internships</h4>
-                            <div class="category-stats">
-                                <span class="stat">32K avg views</span>
-                                <span class="performance-badge good">Good</span>
-                            </div>
-                        </div>
+                    <div id="content-categories-grid" class="categories-grid">
+                        <!-- Category cards will be generated by JavaScript -->
                     </div>
                 </div>
 
                 <!-- Upload Frequency Analysis -->
                 <div class="chart-container">
                     <h3>Upload Frequency vs Subscriber Growth</h3>
-                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/50314dd0872bf59026795120ad90c544/9f23f827-efed-4fa7-ae2e-9a329e1c2b4a/56258975.png" alt="Upload frequency analysis" class="chart-image">
+                    <img src="upload_subscriber_analysis.png" alt="Upload frequency analysis" class="chart-image">
                 </div>
             </section>
 
@@ -218,39 +154,8 @@
                                 <th>Health Score</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="current-channel">
-                                <td><strong>Jhoom Baba Gyaan</strong></td>
-                                <td>60.8K</td>
-                                <td>25.8K</td>
-                                <td>4.5%</td>
-                                <td>5.2/month</td>
-                                <td><span class="health-score good">68.6</span></td>
-                            </tr>
-                            <tr>
-                                <td>CareerVidz</td>
-                                <td>5.0M</td>
-                                <td>45.0K</td>
-                                <td>3.2%</td>
-                                <td>8.0/month</td>
-                                <td><span class="health-score good">78.5</span></td>
-                            </tr>
-                            <tr>
-                                <td>Career Protocol</td>
-                                <td>18.0K</td>
-                                <td>12.0K</td>
-                                <td>5.8%</td>
-                                <td>3.5/month</td>
-                                <td><span class="health-score average">65.2</span></td>
-                            </tr>
-                            <tr>
-                                <td>Internshala</td>
-                                <td>265.0K</td>
-                                <td>22.0K</td>
-                                <td>3.8%</td>
-                                <td>6.2/month</td>
-                                <td><span class="health-score good">72.1</span></td>
-                            </tr>
+                        <tbody id="competitor-table-body">
+                            <!-- Competitor rows will be generated by JavaScript -->
                         </tbody>
                     </table>
                 </div>
@@ -271,69 +176,8 @@
                     <p>Analysis of title, thumbnail, and description optimization</p>
                 </div>
 
-                <div class="seo-grid">
-                    <div class="seo-card">
-                        <h3>Title Optimization</h3>
-                        <div class="seo-score">
-                            <div class="score-circle good">82</div>
-                            <div class="score-details">
-                                <h4>Strengths:</h4>
-                                <ul>
-                                    <li>Uses fire emoji effectively</li>
-                                    <li>Clear value proposition</li>
-                                    <li>Urgency indicators</li>
-                                </ul>
-                                <h4>Improvements:</h4>
-                                <ul>
-                                    <li>Add more specific keywords</li>
-                                    <li>Optimize length for mobile</li>
-                                    <li>Include year/date in evergreen content</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="seo-card">
-                        <h3>Thumbnail Analysis</h3>
-                        <div class="seo-score">
-                            <div class="score-circle good">75</div>
-                            <div class="score-details">
-                                <h4>Strengths:</h4>
-                                <ul>
-                                    <li>Consistent branding</li>
-                                    <li>Clear text overlay</li>
-                                    <li>Attention-grabbing colors</li>
-                                </ul>
-                                <h4>Improvements:</h4>
-                                <ul>
-                                    <li>More emotional expressions</li>
-                                    <li>Better contrast ratios</li>
-                                    <li>A/B test different styles</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="seo-card">
-                        <h3>Description Optimization</h3>
-                        <div class="seo-score">
-                            <div class="score-circle good">70</div>
-                            <div class="score-details">
-                                <h4>Strengths:</h4>
-                                <ul>
-                                    <li>Clear channel purpose</li>
-                                    <li>Contact information provided</li>
-                                    <li>Consistent messaging</li>
-                                </ul>
-                                <h4>Improvements:</h4>
-                                <ul>
-                                    <li>Add more keywords</li>
-                                    <li>Include timestamps</li>
-                                    <li>Add social proof</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div id="seo-grid-container" class="seo-grid">
+                    <!-- SEO cards will be generated by JavaScript -->
                 </div>
             </section>
 
@@ -344,108 +188,8 @@
                     <p>Actionable strategies to accelerate channel growth</p>
                 </div>
 
-                <div class="recommendations">
-                    <div class="recommendation-category">
-                        <h3>🚨 Immediate Actions</h3>
-                        <div class="recommendation-list">
-                            <div class="recommendation-item high-priority">
-                                <div class="priority-indicator high">High</div>
-                                <div class="recommendation-content">
-                                    <h4>Create more scholarship-focused content</h4>
-                                    <p>Highest performing category with 45K average views</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item high-priority">
-                                <div class="priority-indicator high">High</div>
-                                <div class="recommendation-content">
-                                    <h4>Optimize thumbnail design for mobile viewing</h4>
-                                    <p>Improve click-through rates on mobile devices</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item medium-priority">
-                                <div class="priority-indicator medium">Medium</div>
-                                <div class="recommendation-content">
-                                    <h4>Implement consistent posting schedule</h4>
-                                    <p>Post twice weekly on Tuesday and Thursday</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item medium-priority">
-                                <div class="priority-indicator medium">Medium</div>
-                                <div class="recommendation-content">
-                                    <h4>Add end screens to increase session duration</h4>
-                                    <p>Improve audience retention and watch time</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="recommendation-category">
-                        <h3>📈 Short-term Strategies (1-3 months)</h3>
-                        <div class="recommendation-list">
-                            <div class="recommendation-item medium-priority">
-                                <div class="priority-indicator medium">Medium</div>
-                                <div class="recommendation-content">
-                                    <h4>Develop signature series</h4>
-                                    <p>Weekly Internship Updates to build audience expectations</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item medium-priority">
-                                <div class="priority-indicator medium">Medium</div>
-                                <div class="recommendation-content">
-                                    <h4>Create collaboration opportunities</h4>
-                                    <p>Partner with career counselors and industry experts</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item low-priority">
-                                <div class="priority-indicator low">Low</div>
-                                <div class="recommendation-content">
-                                    <h4>Improve SEO with targeted keyword research</h4>
-                                    <p>Focus on trending career-related search terms</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item low-priority">
-                                <div class="priority-indicator low">Low</div>
-                                <div class="recommendation-content">
-                                    <h4>Launch community tab engagement campaigns</h4>
-                                    <p>Use polls and posts to increase community interaction</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="recommendation-category">
-                        <h3>🎯 Long-term Goals (6+ months)</h3>
-                        <div class="recommendation-list">
-                            <div class="recommendation-item high-priority">
-                                <div class="priority-indicator high">High</div>
-                                <div class="recommendation-content">
-                                    <h4>Reach 100K subscribers by Q4 2025</h4>
-                                    <p>Milestone goal requiring consistent content strategy</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item medium-priority">
-                                <div class="priority-indicator medium">Medium</div>
-                                <div class="recommendation-content">
-                                    <h4>Expand beyond internships</h4>
-                                    <p>Include full-time career guidance and job search tips</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item low-priority">
-                                <div class="priority-indicator low">Low</div>
-                                <div class="recommendation-content">
-                                    <h4>Develop premium course offerings</h4>
-                                    <p>Monetize expertise through structured learning programs</p>
-                                </div>
-                            </div>
-                            <div class="recommendation-item low-priority">
-                                <div class="priority-indicator low">Low</div>
-                                <div class="recommendation-content">
-                                    <h4>Build email list for direct communication</h4>
-                                    <p>Create direct channel for audience engagement</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="growth-recommendations-container" class="recommendations">
+                    <!-- Growth recommendations will be generated by JavaScript -->
                 </div>
             </section>
 
@@ -460,32 +204,32 @@
                     <div class="engagement-card">
                         <h3>Peak Engagement Times</h3>
                         <div class="engagement-stat">
-                            <span class="time-badge">6-9 PM IST</span>
-                            <p>Best time to post for maximum engagement</p>
+                            <span id="peak-times-badge" class="time-badge"></span>
+                            <p id="peak-times-desc"></p>
                         </div>
                     </div>
 
                     <div class="engagement-card">
                         <h3>Top Engaging Content</h3>
                         <div class="engagement-stat">
-                            <span class="content-badge">Scholarships & High-Paying Internships</span>
-                            <p>Generate highest audience interaction</p>
+                            <span id="top-content-badge" class="content-badge"></span>
+                            <p id="top-content-desc"></p>
                         </div>
                     </div>
 
                     <div class="engagement-card">
                         <h3>Audience Retention</h3>
                         <div class="engagement-stat">
-                            <span class="retention-badge warning">50% drop in first 30 seconds</span>
-                            <p>Strong opening hook needed to retain viewers</p>
+                            <span id="retention-badge" class="retention-badge warning"></span>
+                            <p id="retention-desc"></p>
                         </div>
                     </div>
 
                     <div class="engagement-card">
                         <h3>Comment Sentiment</h3>
                         <div class="engagement-stat">
-                            <span class="sentiment-badge positive">95% Positive</span>
-                            <p>Highly satisfied and engaged audience</p>
+                            <span id="sentiment-badge" class="sentiment-badge positive"></span>
+                            <p id="sentiment-desc"></p>
                         </div>
                     </div>
                 </div>
@@ -493,13 +237,13 @@
                 <!-- Video Performance Chart -->
                 <div class="chart-container">
                     <h3>Top Performing Videos</h3>
-                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/50314dd0872bf59026795120ad90c544/95cd3d24-a03e-478c-87bd-ce82cc92897b/bb898ce0.png" alt="Video performance chart" class="chart-image">
+                    <img src="video_performance_chart.png" alt="Video performance chart" class="chart-image">
                 </div>
 
                 <!-- Content Category Bubble Chart -->
                 <div class="chart-container">
                     <h3>Content Category Performance Analysis</h3>
-                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/50314dd0872bf59026795120ad90c544/6b217053-750d-448b-9ea7-d5f6c3097f15/43118d63.png" alt="Content category bubble chart" class="chart-image">
+                    <img src="content_category_bubble_chart.png" alt="Content category bubble chart" class="chart-image">
                 </div>
             </section>
         </div>
